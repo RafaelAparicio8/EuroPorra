@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Partidos</title>
+    <link rel="stylesheet" href="adminPartidos.css">
+    <script src="editarPartido.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Partidos</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="adminPartidos.html">Volver</a></li>
+        </ul>
+    </nav>
+
+    <div class="cont" id="listadoPartidos"></div>
+
+    <div class="edit-form" id="editForm">
+        <h2>Editar Partido</h2>
+        <form id="formEditar">
+            <input type="hidden" id="idPartido">
+            <label for="nomEquipoA">Equipo A:</label>
+            <select name="nomEquipoA" class="form-select" id="nomEquipoA" aria-describedby="nomEquipoA">
+                <option value="Alemania">Alemania</option>
+                <option value="Escocia">Escocia</option>
+                <option value="Hungría">Hungría</option>
+                <option value="Suiza">Suiza</option>
+                <option value="España">España</option>
+                <option value="Croacia">Croacia</option>
+                <option value="Italia">Italia</option>
+                <option value="Albania">Albania</option>
+                <option value="Eslovenia">Eslovenia</option>
+                <option value="Dinamarca">Dinamarca</option>
+                <option value="Serbia">Serbia</option>
+                <option value="Inglaterra">Inglaterra</option>
+                <option value="Países Bajos">Países Bajos</option>
+                <option value="Francia">Francia</option>
+                <option value="Polonia">Polonia</option>
+                <option value="Austria">Austria</option>
+                <option value="Ucrania">Ucrania</option>
+                <option value="Eslovaquia">Eslovaquia</option>
+                <option value="Bélgica">Bélgica</option>
+                <option value="Rumania">Rumania</option>
+                <option value="Portugal">Portugal</option>
+                <option value="República Checa">República Checa</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Turquía">Turquía</option>
+            </select>
+            <label for="resultEquipoA">Resultado A:</label>
+            <input type="number" id="resultEquipoA" name="resultEquipoA">
+            <label for="nomEquipoB">Equipo B:</label>
+            <select name="nomEquipoB" class="form-select" id="nomEquipoB" aria-describedby="nomEquipoB">
+                <option value="Alemania">Alemania</option>
+                <option value="Escocia">Escocia</option>
+                <option value="Hungría">Hungría</option>
+                <option value="Suiza">Suiza</option>
+                <option value="España">España</option>
+                <option value="Croacia">Croacia</option>
+                <option value="Italia">Italia</option>
+                <option value="Albania">Albania</option>
+                <option value="Eslovenia">Eslovenia</option>
+                <option value="Dinamarca">Dinamarca</option>
+                <option value="Serbia">Serbia</option>
+                <option value="Inglaterra">Inglaterra</option>
+                <option value="Países Bajos">Países Bajos</option>
+                <option value="Francia">Francia</option>
+                <option value="Polonia">Polonia</option>
+                <option value="Austria">Austria</option>
+                <option value="Ucrania">Ucrania</option>
+                <option value="Eslovaquia">Eslovaquia</option>
+                <option value="Bélgica">Bélgica</option>
+                <option value="Rumania">Rumania</option>
+                <option value="Portugal">Portugal</option>
+                <option value="República Checa">República Checa</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Turquía">Turquía</option>
+            </select>
+            <label for="resultEquipoB">Resultado B:</label>
+            <input type="number" id="resultEquipoB" name="resultEquipoB">
+            <button type="button" onclick="submitForm()">Actualizar</button>
+        </form>
+    </div>
+</body>
+</html>

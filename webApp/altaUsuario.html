@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="altaUsuario.js"></script>
+
+</head>
+<body> 
+
+  <h1>Nuevo Usuario</h1>
+  <form action="ServUsuario" method="post" id="nuevoUsuario">    
+        <legend>Nuevo Usuario</legend>
+
+        <div class="aUsuario">
+        <ul>
+              <li><label for="nombre">Nombre de usuario:</label></li>
+              <li><input id="nombre" type="text" name="nombre" aria-describedby="nombreHelp"></li>
+       
+              <li><label for="password">Contraseña:</label></li>
+              <li><input type="password" id="contrasena" name="contrasena" required><br></li>
+       
+              <button type="submit">Enviar</button>
+              <button type="button" onclick="validarFormulario()">Enviar</button>
+
+        </ul>
+        </div>
+        
+        </form>
+
+
+
+</body>
+</html>
