@@ -20,7 +20,7 @@ function llamada() {
 
 function mostrar(resultados) {
     let html = "<table>";
-    html += "<tr><th>ID Partido</th><th>Equipo A</th><th>Resultado A</th><th>Equipo B</th><th>Resultado B</th></tr>";
+    html += "<tr><th>Partido</th><th>Equipo Local</th><th>Resultado Local</th><th>resultado Visitante</th><th>Equipo Visitante</th></tr>";
     
     for (let i = 0; i < resultados.length; i++) {
         let partido = resultados[i];
@@ -28,8 +28,8 @@ function mostrar(resultados) {
                     <td>${partido.idPartido}</td>
                     <td>${partido.nomEquipoA}</td>
                     <td>${partido.resultEquipoA}</td>
-                    <td>${partido.nomEquipoB}</td>
                     <td>${partido.resultEquipoB}</td>
+                    <td>${partido.nomEquipoB}</td>                 
                  </tr>`;
     }
     html += "</table>";
