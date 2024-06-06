@@ -30,10 +30,18 @@ public class ServSesion extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		// Verificar si ya hay una sesión activa
+		/** Verificar si ya hay una sesión activa
+		 * verificar permisos antes de redirigir a cada pagina
+		 * Redirigir a la página de inicio si ya hay una sesión activa
+		 */
 	    if (sesion.getAttribute("id") != null) {
-	        // Redirigir a la página de inicio si ya hay una sesión activa
-	        response.sendRedirect("inicio.html");
+	    	 int permiso = (int) sesion.getAttribute("permiso");
+	    	    if (permiso == 20) {
+	    	        response.sendRedirect("webAdmin.jsp"); // Página de inicio para administradores
+	    	    } else {
+	    	        response.sendRedirect("inicio.jsp"); // Página de inicio para usuarios normales 
+	    	    }
+	        
 	    } else {
 	        // Obtener los parámetros de la solicitud y configurar la sesión
 	        String nombre = request.getParameter("nombre");

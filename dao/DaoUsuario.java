@@ -134,4 +134,24 @@ public ArrayList<Usuario> listar() throws SQLException {
 		    return null;
 
 	}
+	public Usuario obtenerPorDatos(String nombre, String contrasena) throws SQLException {
+	    String sql = "SELECT * FROM usuario WHERE nombre=? AND contrasena=?";
+	    try (PreparedStatement ps = con.prepareStatement(sql)) {
+	        ps.setString(1, nombre);
+	        ps.setString(2, contrasena);
+
+	        try (ResultSet rs = ps.executeQuery()) {
+	            if (rs.next()) {
+	                return new Usuario(
+	                    rs.getInt("idUsuario"),
+	                    rs.getString("nombre"),
+	                    rs.getString("contrasena"),
+	                    rs.getInt("puntuacion"),
+	                    rs.getInt("permiso")
+	                );
+	            }
+	        }
+	    }
+	    return null;
+	}
 }

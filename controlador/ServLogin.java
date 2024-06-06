@@ -55,14 +55,20 @@ public class ServLogin extends HttpServlet {
 	            sesion.setAttribute("idUsuario", u.getIdUsuario());
 	            sesion.setAttribute("permiso", u.getPermiso());
 	            
-	            response.sendRedirect("inicio.html");
-	        } else {
+	            if (u.getPermiso() == 20) {
+	                response.sendRedirect("webAdmin.html"); // Página de inicio para administradores
+	            } else {
+	                response.sendRedirect("inicio.html"); // Página de inicio para usuarios normales 
+	            
+	            }
+	        }
+	        else {
 	            // Si el inicio de sesión falla, redirigir de vuelta a la página de inicio de sesión
 	            response.sendRedirect("login.html");
 	        }
 	    } catch (SQLException e) {
 	        e.printStackTrace();
-	        // Manejar excepcion de SQL aquí...
+	        
 	    }		
 	}
 
