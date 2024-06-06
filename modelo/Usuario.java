@@ -94,6 +94,14 @@ public class Usuario {
 			dao.insertar(this);
 	}
 	
+	/**
+	 * metodo para editar en la base de datos
+	 */
+	public void editar() throws SQLException {
+		DaoUsuario dao = new DaoUsuario();
+		dao.editar(this);
+	}
+	
 	public void obtenerPorId(int id) throws SQLException {
 		
 		DaoUsuario dao = new DaoUsuario();
@@ -105,6 +113,11 @@ public class Usuario {
 			this.setPermiso(aux.getPermiso());
 			this.setPuntuacion(aux.getPuntuacion());
 		
+	}
+	//metodo para devolver el IdUsuario para editar usuarios.
+	
+	public Integer getId() {
+	    return idUsuario; 
 	}
 	
 	public boolean logeo(String contrasena) throws SQLException {
@@ -132,6 +145,8 @@ public class Usuario {
 		return "Usuario [idUsuario=" + idUsuario + ", nombre=" + nombre + ", contrasena=" + contrasena + ", puntuacion="
 				+ puntuacion + ", permiso=" + permiso + "]";
 	}
+
+
 	
 
 }

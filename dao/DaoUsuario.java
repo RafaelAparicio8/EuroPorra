@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.google.gson.Gson;
 
 import modelo.Usuario;
 
@@ -28,21 +31,71 @@ public class DaoUsuario {
 		
 		
 		int filas =  ps.executeUpdate();
-		
+		System.out.println(filas);
 		ps.close();
 		
+	}
+	
+	/**
+	 * Metodo para listar usuarios:
+	 */
+	
+	
+public ArrayList<Usuario> listar() throws SQLException {
+		
+		
+		String sql =   "SELECT  * FROM usuario";
+		
+		PreparedStatement ps = con.prepareStatement(sql);
+		  
+		ResultSet result = ps.executeQuery();
+		
+		ArrayList<Usuario> usuarios = null;
+		
+		
+		while(result.next()) {
+			if (usuarios == null) {
+				
+				usuarios = new ArrayList<Usuario>();	
+			}
+			
+			usuarios.add(new Usuario(result.getInt("idUsuario"),result.getString("nombre"),result.getString("contrasena"),result.getInt("puntuacion"),result.getInt("permiso")));
+					
+		}
+	
+		return usuarios;
+	
+	}
+	
+	public String listarJson() throws SQLException {
+		
+		String txtJSON = "";
+		
+		Gson gson = new Gson();
+		
+		txtJSON = gson.toJson(this.listar());
+		
+		return txtJSON;
+		
+
 	}
 
 	public void editar(Usuario u) throws SQLException {
 		
-		String sql = "UPDATE usuario SET (nombre=?, permiso=?)WHERE idUsuario=?";
-		 PreparedStatement ps = con.prepareStatement(sql);
-			ps.setString(1, u.getNombre());
-			ps.setString(2, u.getContrasena());
-			ps.setInt(3,  u.getPermiso());
-			ps.setInt(4, u.getIdUsuario());
+		 String sql = "UPDATE usuario SET nombre=?, permiso=? WHERE idUsuario=?";
+		    PreparedStatement ps = con.prepareStatement(sql);
+		    ps.setString(1, u.getNombre());
+		    ps.setInt(2, u.getPermiso());
+		    ps.setInt(3, u.getIdUsuario());
+		    
+		    System.out.println("Nombre: " + u.getNombre());
+            System.out.println("Permiso: " + u.getPermiso());
+            System.out.println("ID Usuario: " + u.getIdUsuario());
 			
 			int filas = ps.executeUpdate();
+			System.out.println("Filas actualizadas: " + filas);
+
+	        ps.close();
 	}
 
 
@@ -56,7 +109,7 @@ public class DaoUsuario {
 		rs.next();
 		
 		Usuario u = new Usuario(rs.getInt(1), rs.getString(2), rs.getString(3),rs.getInt(4), rs.getInt(5));
-		return null;
+		return u;
 	}
 	
 	public  Usuario logeando(Usuario u, String contrasena) throws SQLException{
