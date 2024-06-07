@@ -1,0 +1,57 @@
+@charset "ISO-8859-1";
+
+body {
+    font-family: 'Roboto';
+    background-image: url(fondo2.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    
+}
+header {
+    font-family: 'Roboto';
+    color: #fafafa; 
+    padding: 1rem 0; 
+    text-align: center; 
+    text-shadow: 2px 2px 4px rgba(38, 39, 7, 0.938); 
+    font-size: 3rem; 
+    font-weight: bold; 
+}
+
+
+nav {
+    width: 100%;
+    background-color: #021825e5;
+    margin-bottom: 2rem;
+    border: 2px solid #fde4036c; 
+    border-radius: 5px
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: rgb(231, 231, 238);
+    text-decoration: none;
+    padding: 1rem;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #2f50bb;
+    border-radius: 5px;
+}
+
+h2 {
+    color: #f0ecec;
+    text-align: center;
+}
+

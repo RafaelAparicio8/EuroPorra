@@ -39,8 +39,6 @@ public class DaoUsuario {
 	/**
 	 * Metodo para listar usuarios:
 	 */
-	
-	
 public ArrayList<Usuario> listar() throws SQLException {
 		
 		
@@ -154,4 +152,34 @@ public ArrayList<Usuario> listar() throws SQLException {
 	    }
 	    return null;
 	}
+	
+	/**
+	 * Metodo para listar usuarios de mayor a menor puntuación (clasificación):
+	 */
+public ArrayList<Usuario> listarPuntuacion() throws SQLException {
+		
+		
+		String sql =  "SELECT * FROM usuario ORDER BY puntuacion DESC";
+		
+		PreparedStatement ps = con.prepareStatement(sql);
+		  
+		ResultSet result = ps.executeQuery();
+		
+		ArrayList<Usuario> usuarios = null;
+		
+		
+		while(result.next()) {
+			if (usuarios == null) {
+				
+				usuarios = new ArrayList<Usuario>();	
+			}
+			
+			usuarios.add(new Usuario(result.getInt("idUsuario"),result.getString("nombre"),result.getString("contrasena"),result.getInt("puntuacion"),result.getInt("permiso")));
+					
+		}
+	
+		return usuarios;
+	
+	}
+
 }

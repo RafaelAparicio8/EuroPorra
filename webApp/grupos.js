@@ -32,17 +32,29 @@ function mostrar(resultados) {
         grupos[seleccion.grupo].push(seleccion);
     }
 
-    // Creating HTML for each group
+    // organización por grupos en tablas con estilos e iconos:
     let html = "";
     for (let grupo in grupos) {
-        html += `<h2>Grupo ${grupo}</h2>`;
-        html += "<table border='1'>";
-        html += "<tr><th>Nombre</th><th>Puntos</th><th>GF</th><th>GC</th><th>DIF</th></tr>";
+        html += `<div class="grupos">`;
+        html += `<h3>Grupo ${grupo}</h3>`;
+        html += "<table>";
+        html += "<tr><th></th><th>Equipo</th><th>Pts</th><th>GF</th><th>GC</th><th>DF</th></tr>";
         for (let i = 0; i < grupos[grupo].length; i++) {
             let seleccion = grupos[grupo][i];
-            html += `<tr><td>${seleccion.nombre}</td><td>${seleccion.puntos}</td><td>${seleccion.gf}</td><td>${seleccion.gc}</td><td>${seleccion.dif}</td></tr>`;
+            // Construye la URL de la imagen del icono
+            let iconoUrl = `banderas/${seleccion.nombre}.png`;
+            html += `<tr>`;
+            // Inserta el icono
+            html += `<td><img src="${iconoUrl}" alt="${seleccion.nombre}"></td>`;
+            html += `<td>${seleccion.nombre}</td>`;
+            html += `<td>${seleccion.puntos}</td>`;
+            html += `<td>${seleccion.gf}</td>`;
+            html += `<td>${seleccion.gc}</td>`;
+            html += `<td>${seleccion.dif}</td>`;
+            html += `</tr>`;
         }
         html += "</table>";
+        html += `</div>`;
     }
 
     document.getElementById("listadoSelecciones").innerHTML = html;
@@ -50,4 +62,5 @@ function mostrar(resultados) {
 
 window.onload = function() {
     llamada();
+
 }

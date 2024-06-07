@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     document.getElementById('formEditar').addEventListener('submit', function(event) {
         event.preventDefault();
-        guardarCambios(); // Aquí se debería llamar a la función guardarCambios en lugar de submitForm
+        guardarCambios(); 
     });
 });
 

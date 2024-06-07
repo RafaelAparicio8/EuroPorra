@@ -3,31 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <script src="altaUsuario.js"></script>
 
 </head>
 <body> 
 
-  <h1>Nuevo Usuario</h1>
+<header>
+EUROPORRA 2024
+</header>
+    <main>
+      
+  <section id="registro">
+  
+  <h1>Registro de Usuario</h1> 
+  
   <form action="ServUsuario" method="post" id="nuevoUsuario">    
-        <legend>Nuevo Usuario</legend>
-
+        
         <div class="aUsuario">
-        <ul>
-              <li><label for="nombre">Nombre de usuario:</label></li>
-              <li><input id="nombre" type="text" name="nombre" aria-describedby="nombreHelp"></li>
+  
+            <label for="nombre">Nombre de usuario:</label>
+            <input id="nombre" type="text" name="nombre" aria-describedby="nombreHelp">
        
-              <li><label for="password">Contraseña:</label></li>
-              <li><input type="password" id="contrasena" name="contrasena" required><br></li>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena" required><br>
        
-              <button type="submit">Enviar</button>
-              <button type="button" onclick="validarFormulario()">Enviar</button>
+            <button type="button" onclick="window.location.href='login.html'">Cancelar</button>
+            <button type="button" onclick="validarFormulario()">Enviar</button>
 
-        </ul>
+    
         </div>
         
         </form>
-
+  </section>
+  </main>
 
 
 </body>

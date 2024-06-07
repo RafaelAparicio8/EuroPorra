@@ -144,9 +144,6 @@ public class Usuario {
 	public String toString() {
 		return "Usuario [idUsuario=" + idUsuario + ", nombre=" + nombre + ", contrasena=" + contrasena + ", puntuacion="
 				+ puntuacion + ", permiso=" + permiso + "]";
-	}
-
-
-	
+	}	
 
 }

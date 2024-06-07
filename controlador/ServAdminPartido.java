@@ -39,6 +39,10 @@ public class ServAdminPartido extends HttpServlet {
 		response.setContentType("application/json");
 	    response.setCharacterEncoding("UTF-8");
 	    
+	    
+	    /**
+	     * Metodo para listar los partidos.
+	     */
 	    String id = request.getParameter("id");
 	    PrintWriter out = response.getWriter();
 	    		
@@ -68,6 +72,10 @@ public class ServAdminPartido extends HttpServlet {
 		
 		    response.setContentType("application/json");
 	        response.setCharacterEncoding("UTF-8");
+	        
+	        /**
+		     * Metodo para editar los partidos.
+		     */
 
 	        try {
 	            Gson gson = new Gson();
