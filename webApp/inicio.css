@@ -6,6 +6,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     
+    
 }
 header {
     font-family: 'Roboto';
@@ -54,4 +55,16 @@ h2 {
     color: #f0ecec;
     text-align: center;
 }
-
+.descripcion {
+    background-color:#03112e7a;
+    padding: 100px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-left:45%;
+    margin-right: 15%;
+    color: #fafafa;
+    font-size: 16px;
+    margin-top: 10px;
+    text-align: center;
+     border: 2px solid #fde4036c; 
+}

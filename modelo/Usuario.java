@@ -1,5 +1,8 @@
 package modelo;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 
 
@@ -119,27 +122,44 @@ public class Usuario {
 	public Integer getId() {
 	    return idUsuario; 
 	}
+	public String getMd5(String input) {
+	    try {
+	        MessageDigest md = MessageDigest.getInstance("MD5");
+	        byte[] messageDigest = md.digest(input.getBytes());
+	        BigInteger number = new BigInteger(1, messageDigest);
+	        String hashtext = number.toString(16);
+
+	        while (hashtext.length() < 32) {
+	            hashtext = "0" + hashtext;
+	        }
+
+	        return hashtext;
+	    } catch (NoSuchAlgorithmException e) {
+	        throw new RuntimeException(e);
+	    }
+	    }
 	
 	public boolean logeo(String contrasena) throws SQLException {
-		
-		boolean ok = false;
-		
-		DaoUsuario dao = new DaoUsuario();
-		Usuario aux = dao.logeando(this, contrasena);
-		
-		if (aux != null && aux.getContrasena().equals(contrasena)){
-			this.setIdUsuario(aux.getIdUsuario());
-			this.setNombre(aux.getNombre());
-			this.setContrasena(aux.getContrasena());
-			this.setPermiso(aux.getPermiso());
-			this.setPuntuacion(aux.getPuntuacion());
-			ok=true;
-		}
-		
-		
-		return ok;
+	    boolean ok = false;
+	    DaoUsuario dao = new DaoUsuario();
+	    Usuario aux = dao.logeando(this, getMd5(contrasena)); // Cifra la contraseña antes de buscarla en la base de datos
+	    
+	    if (aux != null) {
+	        System.out.println("Contraseña ingresada: " + getMd5(contrasena));
+	        System.out.println("Contraseña almacenada: " + aux.getContrasena());
+	        
+	        if (aux.getContrasena().equals(getMd5(contrasena))) {
+	            this.setIdUsuario(aux.getIdUsuario());
+	            this.setNombre(aux.getNombre());
+	            this.setContrasena(aux.getContrasena());
+	            this.setPermiso(aux.getPermiso());
+	            this.setPuntuacion(aux.getPuntuacion());
+	            ok = true;
+	        }
+	    }
+	    
+	    return ok;
 	}
-
 	@Override
 	public String toString() {
 		return "Usuario [idUsuario=" + idUsuario + ", nombre=" + nombre + ", contrasena=" + contrasena + ", puntuacion="

@@ -182,4 +182,15 @@ public ArrayList<Usuario> listarPuntuacion() throws SQLException {
 	
 	}
 
+public void eliminar(int idUsuario) throws SQLException {
+      
+         String sql = "DELETE FROM usuario WHERE idUsuario=?";
+         PreparedStatement ps = con.prepareStatement(sql);
+         ps.setInt(1, idUsuario);
+         
+         int filas = ps.executeUpdate();
+         System.out.println("Usuarios eliminados: "+ filas);
+         ps.close();
+      }
+         
 }
