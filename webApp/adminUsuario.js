@@ -2,7 +2,7 @@
  * 
  */
 function llamada() {
-    fetch('ServEditarUsuario') // Cambia ServEditarUsuario por ServListarUsuarios
+    fetch('ServEditarUsuario') 
         .then(response => response.json())
         .then(data => mostrar(data))
         .catch(error => console.error('Error:', error));
@@ -20,7 +20,7 @@ function mostrar(resultados) {
                     <td>${usuario.puntuacion}</td>
                     <td>${usuario.permiso}</td>
                     <td><a href='editarUsuario.html?id=${usuario.idUsuario}&op=2'>Editar</a></td>
-                    <td><a href='#' onclick='eliminarUsuario(${usuario.idUsuario})'>Eliminar</a></td>
+                     <td><a href='#' onclick='eliminarUsuario(${usuario.idUsuario})'>Eliminar</a></td>
                  </tr>`;
     }
     html += "</table>";

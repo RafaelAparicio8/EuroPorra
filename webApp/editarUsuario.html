@@ -4,14 +4,23 @@
 <meta charset="UTF-8">
 <title>Editar Usuario</title>
 <script src="editarUsuario.js" defer></script>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
 
 <head></head>
 
 <body>
 <form id="formEditar" method="POST">
     <input type="hidden" id="idUsuario" name="idUsuario">
+    
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="nombre"><br>
+    
+    <label for="contrasena">Contraseña:</label>
+    <input type="text" id="contrasena" name="contrasena"><br>
+    
+    <label for="puntuacion">Puntuación:</label>
+    <input type="number"  id="puntuacion" name="puntuacion"><br>
   
     <label for="permiso">Permiso:</label>
     <input type="number" id="permiso" name="permiso"><br>

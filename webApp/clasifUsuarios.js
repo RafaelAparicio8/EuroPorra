@@ -10,7 +10,7 @@ function llamada() {
 
 function mostrar(resultados) {
     let html = "<table>";
-    html += "<tr><th>Nombre de usuario</th><th>Puntuacion</th></tr>";
+    html += "<tr><Posición</tr><th>Nombre de usuario</th><th>Puntuacion</th></tr>";
 
     for (let i = 0; i < resultados.length; i++) {
         let usuario = resultados[i];

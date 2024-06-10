@@ -26,11 +26,16 @@ function cargarUsuario(usuario) {
 function guardarCambios() { // Cambiar submitForm por guardarCambios
     const idUsuario = document.getElementById('idUsuario').value;
     const nombre = document.getElementById('nombre').value;
+    const contrasena = document.getElementById('contrasena').value
+    const puntuacion = document.getElementById('puntuacion').value
     const permiso = document.getElementById('permiso').value;
+    
  
     const usuario = {
         idUsuario: idUsuario,
         nombre: nombre,
+        contrasena: contrasena,
+        puntuacion: puntuacion,
         permiso: permiso,
     };
 

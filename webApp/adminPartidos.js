@@ -24,7 +24,7 @@ function mostrar(resultados) {
                     <td>${partido.resultEquipoA}</td>
                     <td>${partido.nomEquipoB}</td>
                     <td>${partido.resultEquipoB}</td>
-                    <td><a href='editarPartidos.html?id=${partido.idPartido}&op=2'>Editar</a></td>
+                    <td><button class="update-button" onclick="location.href='editarPartidos.html?id=${partido.idPartido}&op=2'">Actualizar</button></td>
                  </tr>`;
     }
     html += "</table>";

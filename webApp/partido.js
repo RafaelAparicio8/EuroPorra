@@ -20,7 +20,7 @@ function llamada() {
 
 function mostrar(resultados) {
     let html = "<table>";
-    html += "<tr><th>Partido</th><th>Equipo Local</th><th>Resultado Local</th><th>resultado Visitante</th><th>Equipo Visitante</th></tr>";
+    html += "<tr><th>Partido</th><th>Equipo Local</th><th>Resultado Local</th><th>Resultado Visitante</th><th>Equipo Visitante</th></tr>";
     
     for (let i = 0; i < resultados.length; i++) {
         let partido = resultados[i];

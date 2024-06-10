@@ -99,4 +99,24 @@
     <servlet-name>ServClasifUsuarios</servlet-name>
     <url-pattern>/ServClasifUsuarios</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServJugador</display-name>
+    <servlet-name>ServJugador</servlet-name>
+    <servlet-class>controlador.ServJugador</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServJugador</servlet-name>
+    <url-pattern>/ServJugador</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServJugadores</display-name>
+    <servlet-name>ServJugadores</servlet-name>
+    <servlet-class>controlador.ServJugadores</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServJugadores</servlet-name>
+    <url-pattern>/ServJugadores</url-pattern>
+  </servlet-mapping>
 </web-app>

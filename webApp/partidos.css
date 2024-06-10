@@ -4,8 +4,9 @@ body {
     padding: 0;
     background-color: #f0f0f07a;
     background-image: url(fondoA.png);
-    background-size: cover; /* Ajusta el tamaño de la imagen de fondo para cubrir todo el body */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
 }
 
 header {
@@ -17,37 +18,45 @@ header {
     font-size: 3rem; 
     font-weight: bold; 
 }
-.cont {
+
+.partidos{
     display: grid;
     grid-template-columns: 1fr;
     align-items: flex-start;
     max-width: 800px;
     margin: 0 auto;
     padding: 1rem;
-    background-color:  #aaafd8b0;
-    border-radius: 5px;
     text-align: center;
     margin-top: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 1rem;
-    color: rgb(7, 2, 36);
+    color:#fafafa;
+    background-color:#021825c0;
+    
+    border: 2px solid #fde4036c;
+    border-radius: 5px;
+    
 }
 
 th {
-    background-color: #333;
+    background-color: #021825e5;
     color: white;
-    padding: 12px;
+    padding: 10px;
     text-align: center;
+    border: 2px solid #fde4036c;
+    border-radius: 5px;
 }
 
 td {
+	
     border: 1px solid #ddd;
     padding: 12px;
+    border-radius: 2px;
+    border: 2px solid #fde4036c;
 }
 
 nav {
@@ -81,3 +90,19 @@ nav ul li a:hover {
     background-color: #2f50bb;
     border-radius: 5px;
 }   
+button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    background-color: #000007a9; 
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #003aa7; 
+}
+
