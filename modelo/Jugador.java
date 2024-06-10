@@ -3,6 +3,7 @@ package modelo;
 import java.sql.SQLException;
 
 import dao.DaoJugadores;
+import dao.DaoUsuario;
 
 public class Jugador {
 	
@@ -57,18 +58,38 @@ public class Jugador {
 		this.gol = gol;
 	}
 	
-	//metodo para insertar a BD
-	public void insertar () throws SQLException {
-		DaoJugadores dao = new DaoJugadores();
-		dao.insertar(this);
-	}
 	
 	// metodo toString
 	@Override
 	public String toString() {
 		return "Jugador [id=" + id + ", nombre=" + nombre + ", seleccion=" + seleccion + ", gol=" + gol + "]";
 	}
+	//metodo para insertar a BD
+		public void insertar () throws SQLException {
+			DaoJugadores dao = new DaoJugadores();
+			dao.insertar(this);
+		}
+	//obtener por id:
 	
+		public void obtenerPorId(int id) throws SQLException {
+			
+			DaoJugadores dao = new DaoJugadores();
+			Jugador aux = dao.obtenerPorId (id);
+			
+				this.setId(aux.getId());
+				this.setNombre(aux.getNombre());
+				this.setSeleccion(aux.getSeleccion());
+				this.setGol(aux.getGol());
+				
+				
+			
+		}
+	//metodo para editar jugadores:
+		
+		    
+		
+
+
 
 	
 }

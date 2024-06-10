@@ -38,7 +38,7 @@ public ArrayList<Partido> listar() throws SQLException {
 				partidos= new ArrayList<Partido>();	
 			}
 			
-			partidos.add(new Partido(result.getInt("idPartido"),result.getInt("equipoA_id"),result.getInt("equipoB_id"),result.getInt("resultEquipoA"),result.getInt("resultEquipoB"),result.getString("nomEquipoA"),result.getString("nomEquipoB")));
+			partidos.add(new Partido(result.getInt("idPartido"),result.getInt("equipoA_id"),result.getInt("equipoB_id"),result.getInt("resultEquipoA"),result.getInt("resultEquipoB"),result.getString("nomEquipoA"),result.getString("nomEquipoB"),result.getString("ganador")));
 					
 		}
 	

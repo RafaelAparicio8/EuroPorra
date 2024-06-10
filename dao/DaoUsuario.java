@@ -80,15 +80,20 @@ public ArrayList<Usuario> listar() throws SQLException {
 
 	public void editar(Usuario u) throws SQLException {
 		
-		 String sql = "UPDATE usuario SET nombre=?, permiso=? WHERE idUsuario=?";
+		 String sql = "UPDATE usuario SET nombre=?,contrasena=?, puntuacion=?, permiso=? WHERE idUsuario=?";
 		    PreparedStatement ps = con.prepareStatement(sql);
 		    ps.setString(1, u.getNombre());
-		    ps.setInt(2, u.getPermiso());
-		    ps.setInt(3, u.getIdUsuario());
+		    ps.setString(2, u.getContrasena());
+		    ps.setInt(3, u.getPuntuacion());
+		    ps.setInt(4, u.getPermiso());
+		    ps.setInt(5, u.getIdUsuario());
 		    
+		    System.out.println("ID Usuario: " + u.getIdUsuario());
 		    System.out.println("Nombre: " + u.getNombre());
+            System.out.println("contrasena: " + u.getContrasena());
+            System.out.println("Puntuacion: " + u.getPuntuacion());
             System.out.println("Permiso: " + u.getPermiso());
-            System.out.println("ID Usuario: " + u.getIdUsuario());
+            
 			
 			int filas = ps.executeUpdate();
 			System.out.println("Filas actualizadas: " + filas);
@@ -156,30 +161,27 @@ public ArrayList<Usuario> listar() throws SQLException {
 	/**
 	 * Metodo para listar usuarios de mayor a menor puntuación (clasificación):
 	 */
-public ArrayList<Usuario> listarPuntuacion() throws SQLException {
-		
-		
-		String sql =  "SELECT * FROM usuario ORDER BY puntuacion DESC";
-		
-		PreparedStatement ps = con.prepareStatement(sql);
-		  
-		ResultSet result = ps.executeQuery();
-		
-		ArrayList<Usuario> usuarios = null;
-		
-		
-		while(result.next()) {
-			if (usuarios == null) {
-				
-				usuarios = new ArrayList<Usuario>();	
-			}
-			
-			usuarios.add(new Usuario(result.getInt("idUsuario"),result.getString("nombre"),result.getString("contrasena"),result.getInt("puntuacion"),result.getInt("permiso")));
-					
-		}
-	
-		return usuarios;
-	
+	public ArrayList<Usuario> listarPuntuacion() throws SQLException {
+	    String sql = "SELECT * FROM usuario ORDER BY puntuacion DESC";
+	    PreparedStatement ps = con.prepareStatement(sql);
+	    ResultSet result = ps.executeQuery();
+	    
+	    ArrayList<Usuario> usuarios = new ArrayList<>();
+	    
+	    while (result.next()) {
+	        int idUsuario = result.getInt("idUsuario");
+	        String nombre = result.getString("nombre");
+	        String contrasena = result.getString("contrasena");
+	        int puntuacion = result.getInt("puntuacion");
+	        int permiso = result.getInt("permiso");
+	        
+	        Usuario usuario = new Usuario(idUsuario, nombre, contrasena, puntuacion, permiso);
+	        usuarios.add(usuario);
+	        System.out.println("ID: " + result.getInt("idUsuario") + ", Puntuacion: " + result.getInt("puntuacion"));
+
+	    }
+	    
+	    return usuarios;
 	}
 
 public void eliminar(int idUsuario) throws SQLException {

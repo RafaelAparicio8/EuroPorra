@@ -9,7 +9,7 @@ public class Partido {
 	private int resultEquipoB;
 	private String nomEquipoA;
 	private String nomEquipoB;
-	
+	private String ganador;
 	
 	public Partido (){
 		
@@ -17,7 +17,7 @@ public class Partido {
 
 
 	public Partido(int idPartido, int equipoA_id, int equipoB_id, int resultEquipoA, int resultEquipoB,
-			String nomEquipoA, String nomEquipoB) {
+			String nomEquipoA, String nomEquipoB, String ganador) {
 		super();
 		this.idPartido = idPartido;
 		this.equipoA_id = equipoA_id;
@@ -26,6 +26,7 @@ public class Partido {
 		this.resultEquipoB = resultEquipoB;
 		this.nomEquipoA = nomEquipoA;
 		this.nomEquipoB = nomEquipoB;
+		this.ganador = ganador;
 	}
 
 
@@ -98,13 +99,21 @@ public class Partido {
 		this.nomEquipoB = nomEquipoB;
 	}
 
+	public String ganador() {
+		return nomEquipoB;
+	}
+	public void setGanador(String ganador) {
+		this.ganador = ganador;
+	}
+
 
 	@Override
 	public String toString() {
 		return "Partido [idPartido=" + idPartido + ", equipoA_id=" + equipoA_id + ", equipoB_id=" + equipoB_id
 				+ ", resultEquipoA=" + resultEquipoA + ", resultEquipoB=" + resultEquipoB + ", nomEquipoA=" + nomEquipoA
-				+ ", nomEquipoB=" + nomEquipoB + "]";
+				+ ", nomEquipoB=" + nomEquipoB + ", ganador=" + ganador + "]";
 	}
-	
+
+
 	
 }
