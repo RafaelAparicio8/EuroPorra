@@ -139,4 +139,14 @@
     <servlet-name>ServPronos</servlet-name>
     <url-pattern>/ServPronos</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServPuntuacion</display-name>
+    <servlet-name>ServPuntuacion</servlet-name>
+    <servlet-class>controlador.ServPuntuacion</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServPuntuacion</servlet-name>
+    <url-pattern>/ServPuntuacion</url-pattern>
+  </servlet-mapping>
 </web-app>

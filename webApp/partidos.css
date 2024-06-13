@@ -12,7 +12,7 @@ body {
 header {
     font-family: 'Roboto';
     color: #fafafa; 
-    padding: 1rem 0; 
+    padding:  2px; 
     text-align: center; 
     text-shadow: 2px 2px 4px rgba(42, 43, 2, 0.438); 
     font-size: 3rem; 
@@ -27,7 +27,7 @@ header {
     margin: 0 auto;
     padding: 1rem;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 table {
@@ -91,7 +91,7 @@ nav ul li a:hover {
     border-radius: 5px;
 }   
 button {
-    width: 30%;
+    width: 100%;
     padding: 0.75rem;
     border: none;
     background-color: rgb(255, 255, 0); 
@@ -99,8 +99,8 @@ button {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 1rem;
-    margin-left:35%;
-    margin-bottom:10px;
+    margin-left:8%;
+    margin-bottom:1px;
     transition: background-color 0.3s;
     text-align: center;
 }

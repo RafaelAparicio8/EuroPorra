@@ -86,6 +86,12 @@ public ArrayList<Partido> listar() throws SQLException {
 		ps.setInt(5, partido.getIdPartido());
 		
 		int filas = ps.executeUpdate();
+		
+		//Actualizar puntuaciones usuarios en vase al resultado añadido
+		 if (filas > 0) {
+		        DaoPronostico daoPronostico = new DaoPronostico();
+		        daoPronostico.puntuacion(); // Llama al método que recalcula las puntuaciones
+		    }
 	}
 	
 

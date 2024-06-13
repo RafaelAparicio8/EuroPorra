@@ -16,6 +16,7 @@ import com.google.gson.Gson;
 
 import dao.DaoAdminPartido;
 import dao.DaoPartido;
+import dao.DaoPronostico;
 
 /**
  * Servlet implementation class ServAdminPartido
@@ -83,13 +84,17 @@ public class ServAdminPartido extends HttpServlet {
 
 	            DaoAdminPartido dao = new DaoAdminPartido();
 	            dao.editar(partido);
+	            
+	         // Recalcular puntajes de usuarios después de editar el partido
+	            DaoPronostico daoPronostico = new DaoPronostico();
+	            daoPronostico.puntuacion();
 
 	            response.getWriter().print(gson.toJson(partido));
 
-	        } catch (SQLException e) {
-	            e.printStackTrace();
-	        }
-	
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 	}
 
 }
