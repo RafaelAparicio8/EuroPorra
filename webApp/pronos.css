@@ -91,21 +91,17 @@ nav ul li a:hover {
     border-radius: 5px;
 }   
 button {
-    width: 30%;
+    width: 100%;
     padding: 0.75rem;
     border: none;
-    background-color: rgb(255, 255, 0); 
-    color: rgb(0, 0, 0);
+    background-color: #000007a9; 
+    color: white;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 1rem;
-    margin-left:35%;
-    margin-bottom:10px;
     transition: background-color 0.3s;
-    text-align: center;
 }
+
 button:hover {
-    background-color:rgb(159, 241, 255); 
+    background-color: #003aa7; 
 }
-
-

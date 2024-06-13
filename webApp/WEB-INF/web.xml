@@ -119,4 +119,24 @@
     <servlet-name>ServJugadores</servlet-name>
     <url-pattern>/ServJugadores</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServPronostico</display-name>
+    <servlet-name>ServPronostico</servlet-name>
+    <servlet-class>controlador.ServPronostico</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServPronostico</servlet-name>
+    <url-pattern>/ServPronostico</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServPronos</display-name>
+    <servlet-name>ServPronos</servlet-name>
+    <servlet-class>controlador.ServPronos</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServPronos</servlet-name>
+    <url-pattern>/ServPronos</url-pattern>
+  </servlet-mapping>
 </web-app>
